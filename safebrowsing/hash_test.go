@@ -24,7 +24,7 @@ import (
 	"sync"
 	"testing"
 
-	pb "./safebrowsing_proto"
+	pb "github.com/gzhousc/safebrowsing/safebrowsing_proto"
 
 	"github.com/golang/protobuf/proto"
 )

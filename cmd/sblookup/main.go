@@ -35,7 +35,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/google/safebrowsing"
+	"github.com/gzhousc/safebrowsing"
 )
 
 var (

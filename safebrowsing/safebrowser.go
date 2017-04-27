@@ -79,7 +79,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	pb "./safebrowsing_proto"
+	pb "github.com/gzhousc/safebrowsing/safebrowsing_proto"
 )
 
 const (

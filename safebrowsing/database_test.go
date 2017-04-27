@@ -29,7 +29,7 @@ import (
 	"time"
 
 	google_protobuf "github.com/golang/protobuf/ptypes/duration"
-	pb "./safebrowsing_proto"
+	pb "github.com/gzhousc/safebrowsing/safebrowsing_proto"
 )
 
 func mustGetTempFile(t *testing.T) string {

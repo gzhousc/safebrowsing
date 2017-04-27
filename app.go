@@ -179,12 +179,12 @@ import (
 	//"net/url"
 	"os"
 
-	"github.com/google/safebrowsing"
+	"github.com/gzhousc/safebrowsing"
 	pb "./safebrowsing/safebrowsing_proto"
 
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
-	_ "github.com/google/safebrowsing/cmd/sbserver/statik"
+	_ "github.com/gzhousc/safebrowsing/cmd/sbserver/statik"
 	"github.com/rakyll/statik/fs"
 )
 
