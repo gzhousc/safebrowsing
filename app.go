@@ -185,7 +185,7 @@ import (
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
 	_ "github.com/gzhousc/safebrowsing/cmd/sbserver/statik"
-	"github.com/rakyll/statik/fs"
+	//"github.com/rakyll/statik/fs"
 )
 
 const (
@@ -202,7 +202,7 @@ const (
 
 var (
 	apiKeyFlag   = flag.String("apikey", "", "specify your Safe Browsing API key")
-	srvAddrFlag  = flag.String("srvaddr", "localhost:8080", "TCP network address the HTTP server should use")
+	srvAddrFlag  = flag.String("srvaddr", ":8080", "TCP network address the HTTP server should use")
 	databaseFlag = flag.String("db", "", "path to the Safe Browsing database.")
 )
 
@@ -444,11 +444,11 @@ func main() {
 		fmt.Fprintln(os.Stderr, "Unable to initialize Safe Browsing client: ", err)
 		os.Exit(1)
 	}
-	statikFS, err := fs.New()
-	if err != nil {
-		fmt.Fprintln(os.Stderr, "Unable to initialize static files: ", err)
-		os.Exit(1)
-	}
+	//statikFS, err := fs.New()
+	//if err != nil {
+	//	fmt.Fprintln(os.Stderr, "Unable to initialize static files: ", err)
+	//	os.Exit(1)
+	//}
 
 	http.HandleFunc(gaeHealthCheckPath, func(w http.ResponseWriter, r *http.Request) {
 		fmt.Fprint(w, "ok")
@@ -462,7 +462,7 @@ func main() {
 	http.HandleFunc(getThreatListsPath, func(w http.ResponseWriter, r *http.Request) {
 		serveLists(w, r, &conf)
 	})
-	http.Handle("/public/", http.StripPrefix("/public/", http.FileServer(statikFS)))
+	//http.Handle("/public/", http.StripPrefix("/public/", http.FileServer(statikFS)))
 
 	fmt.Fprintln(os.Stdout, "Starting server at", *srvAddrFlag)
 	if err := http.ListenAndServe(*srvAddrFlag, nil); err != nil {
