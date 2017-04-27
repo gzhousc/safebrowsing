@@ -179,8 +179,8 @@ import (
 	//"net/url"
 	"os"
 
-	"github.com/gzhousc/safebrowsing"
-	pb "./safebrowsing/safebrowsing_proto"
+	"github.com/gzhousc/safebrowsing/safebrowsing"
+	pb "github.com/gzhousc/safebrowsing/safebrowsing/safebrowsing_proto"
 
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"

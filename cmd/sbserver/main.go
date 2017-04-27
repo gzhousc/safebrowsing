@@ -199,7 +199,7 @@ import (
 	"os"
 
 	"github.com/gzhousc/safebrowsing"
-	pb "github.com/gzhousc/safebrowsing/safebrowsing_proto"
+	pb "github.com/gzhousc/safebrowsing/safebrowsing/safebrowsing_proto"
 
 	"github.com/golang/protobuf/jsonpb"
 	"github.com/golang/protobuf/proto"
